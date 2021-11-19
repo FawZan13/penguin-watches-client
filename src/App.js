@@ -16,6 +16,7 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import Purchase from './Pages/Purchase/Purchase/Purchase';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import AddReview from './Pages/AddReview/AddReview';
 
 
 function App() {
@@ -48,6 +49,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/addProduct">
               <AddProduct></AddProduct>
+            </PrivateRoute>
+            <PrivateRoute path="/addReview">
+              <AddReview></AddReview>
             </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>

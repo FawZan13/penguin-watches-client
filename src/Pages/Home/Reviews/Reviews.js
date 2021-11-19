@@ -1,23 +1,15 @@
 import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Review from '../Review/Review';
 
 const Reviews = () => {
-    const reviews = [
-        {
-            "name": "Yukino",
-            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        },
-        {
-            "name": "Asuna",
-            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        },
-        {
-            "name": "Alice",
-            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        }
-    ]
+    const [reviews, setReviews] = useState([])
+    useEffect(() => {
+        fetch('https://gentle-everglades-82582.herokuapp.com/reviews')
+            .then(res => res.json())
+            .then(data => setReviews(data));
+    }, [])
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Container>

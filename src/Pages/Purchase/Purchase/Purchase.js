@@ -8,7 +8,9 @@ const Purchase = () => {
     const { _id } = useParams();
     const { register, handleSubmit } = useForm();
     const { user } = useAuth();
+    console.log(user);
     const email = user.email;
+    const userName = user.displayName;
     const [product, setProduct] = useState({});
 
 
@@ -38,6 +40,10 @@ const Purchase = () => {
     }
     return (
         <Container>
+            <Typography variant="body1" gutterBottom>
+                {userName}
+                {email}
+            </Typography>
             <Grid container spacing={2}>
                 <Grid sx={{ mt: 10 }} item xs={12} md={6}>
                     <Typography variant="body1" gutterBottom>

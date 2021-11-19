@@ -30,6 +30,7 @@ const Header = () => {
                     <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home"><Button color="inherit">Home</Button></NavLink>
                     <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/explore"><Button color="inherit">Explore</Button></NavLink>
                     <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/addProduct"><Button color="inherit">Add Product</Button></NavLink>
+                    <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/addReview"><Button color="inherit">Add Review</Button></NavLink>
                     {
                         user?.email ?
                             <Box>
