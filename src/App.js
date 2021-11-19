@@ -12,6 +12,10 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/NotFound/NotFound';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import AddProduct from './Pages/AddProduct/AddProduct';
+import Purchase from './Pages/Purchase/Purchase/Purchase';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 
 function App() {
@@ -36,6 +40,15 @@ function App() {
             <Route path="/explore">
               <Explore></Explore>
             </Route>
+            <PrivateRoute path="/purchase/:_id">
+              <Purchase></Purchase>
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute path="/addProduct">
+              <AddProduct></AddProduct>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>

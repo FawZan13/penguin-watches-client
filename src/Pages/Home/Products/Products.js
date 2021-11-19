@@ -1,41 +1,16 @@
 import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 
 const Products = () => {
-    const products = [
-        {
-            "img": "https://i.ibb.co/0F2YDp0/white-smartwatch-background-1412-32.jpg",
-            "name": "Yukino",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        },
-        {
-            "img": "https://i.ibb.co/0F2YDp0/white-smartwatch-background-1412-32.jpg",
-            "name": "Asuna",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        },
-        {
-            "img": "https://i.ibb.co/0F2YDp0/white-smartwatch-background-1412-32.jpg",
-            "name": "Alice",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        },
-        {
-            "img": "https://i.ibb.co/0F2YDp0/white-smartwatch-background-1412-32.jpg",
-            "name": "Alice",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        },
-        {
-            "img": "https://i.ibb.co/0F2YDp0/white-smartwatch-background-1412-32.jpg",
-            "name": "Alice",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        },
-        {
-            "img": "https://i.ibb.co/0F2YDp0/white-smartwatch-background-1412-32.jpg",
-            "name": "Alice",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        }
-    ]
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/products')
+            .then(res => res.json())
+            .then(data => setProducts(data));
+    }, [])
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Container>
