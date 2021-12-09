@@ -7,7 +7,8 @@
 * Log in our website to purchase
 * Our website shows the details of the products
 * You can write reviews
+* Admin functionalities
 
 
 ## Our Website:
-Please visit our website: [https://fawzan-travel.firebaseapp.com/](https://fawzan-travel.firebaseapp.com/)
+Please visit our website: [https://penguin-watches.firebaseapp.com/](https://penguin-watches.firebaseapp.com/)

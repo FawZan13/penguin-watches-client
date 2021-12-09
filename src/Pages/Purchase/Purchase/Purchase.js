@@ -15,7 +15,7 @@ const Purchase = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${_id}`)
+        fetch(`https://gentle-everglades-82582.herokuapp.com/products/${_id}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [])
@@ -28,7 +28,7 @@ const Purchase = () => {
         data.img = product.img;
         data.description = product.description;
         console.log(data);
-        fetch("http://localhost:5000/myOrders", {
+        fetch("https://gentle-everglades-82582.herokuapp.com/myOrders", {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data),
@@ -61,7 +61,7 @@ const Purchase = () => {
                         <CardMedia
                             component="img"
                             alt="watch"
-                            style={{ width: '100%', height: '250px', margin: '0 auto' }}
+                            style={{ width: '100%', height: '250px', margin: '0 auto', padding: '10px' }}
                             image={product.img}
                         />
                         <CardContent>
@@ -75,12 +75,6 @@ const Purchase = () => {
                                 {product.description}
                             </Typography>
                         </CardContent>
-                        <CardActions>
-                            {/* <Link style={{ margin: 'auto', textDecoration: 'none' }} to={`/purchase/${_id}`}>
-                                <Button color="secondary" variant="outlined" >Purchase</Button>
-                            </Link> */}
-
-                        </CardActions>
                     </Card>
                 </Grid>
             </Grid>
