@@ -43,13 +43,13 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             {admin ? <Box>
-                <Link style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
+                <Link style={{ textDecoration: 'none' }} to={`${url}`}><Button color="inherit">Make Admin</Button></Link>
                 <Link style={{ textDecoration: 'none' }} to={`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
                 <Link style={{ textDecoration: 'none' }} to={`${url}/manageOrders`}><Button color="inherit">Manage Orders</Button></Link>
                 <Link style={{ textDecoration: 'none' }} to={`${url}/manageProducts`}><Button color="inherit">Manage Products</Button></Link>
             </Box> :
                 <Box>
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/addReview`}><Button color="inherit">Add Review</Button></Link> <br></br>
+                    <Link style={{ textDecoration: 'none' }} to={`${url}`}><Button color="inherit">Add Review</Button></Link> <br></br>
                     <Link style={{ textDecoration: 'none' }} to={`${url}/myOrders`}><Button color="inherit">My Orders</Button></Link><br></br>
                     <Link style={{ textDecoration: 'none' }} to={`${url}/pay`}><Button color="inherit">Pay</Button></Link>
                 </Box>
