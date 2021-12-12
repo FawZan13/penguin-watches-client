@@ -16,7 +16,6 @@ import {
     Link,
     useRouteMatch
 } from "react-router-dom";
-import { Button } from '@mui/material';
 import AddReview from '../AddReview/AddReview';
 import Payment from '../Payment/Payment';
 import MyOrders from '../MyOrders/MyOrders';
@@ -25,15 +24,22 @@ import AddProduct from '../AddProduct/AddProduct';
 import ManageOrders from '../ManageOrders/ManageOrders';
 import useAuth from '../../../hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import PrivateRoute from '../../Login/PrivateRoute/PrivateRoute';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import CircularProgress from '@mui/material/CircularProgress';
+import { Button } from '@mui/material';
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { admin, logout } = useAuth();
+    const { admin, logout, isLoading } = useAuth();
     let { path, url } = useRouteMatch();
+    if (isLoading) {
+        return <CircularProgress color="secondary" />
+
+    }
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -42,14 +48,15 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
+            <Link style={{ textDecoration: 'none' }} to={`${url}`}>{admin ? <Button color="inherit">Make Admin</Button> : <Button color="inherit">Add Review</Button>}</Link>
             {admin ? <Box>
-                <Link style={{ textDecoration: 'none' }} to={`${url}`}><Button color="inherit">Make Admin</Button></Link>
+
                 <Link style={{ textDecoration: 'none' }} to={`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
                 <Link style={{ textDecoration: 'none' }} to={`${url}/manageOrders`}><Button color="inherit">Manage Orders</Button></Link>
                 <Link style={{ textDecoration: 'none' }} to={`${url}/manageProducts`}><Button color="inherit">Manage Products</Button></Link>
             </Box> :
                 <Box>
-                    <Link style={{ textDecoration: 'none' }} to={`${url}`}><Button color="inherit">Add Review</Button></Link> <br></br>
+                    {/* <Link style={{ textDecoration: 'none' }} to={`${url}`}><Button color="inherit">Add Review</Button></Link> <br></br> */}
                     <Link style={{ textDecoration: 'none' }} to={`${url}/myOrders`}><Button color="inherit">My Orders</Button></Link><br></br>
                     <Link style={{ textDecoration: 'none' }} to={`${url}/pay`}><Button color="inherit">Pay</Button></Link>
                 </Box>
@@ -130,15 +137,15 @@ function Dashboard(props) {
                             <AddReview></AddReview>
                         }
                     </Route>
-                    <Route path={`${path}/addReview`}>
+                    <PrivateRoute path={`${path}/addReview`}>
                         <AddReview></AddReview>
-                    </Route>
-                    <Route path={`${path}/pay`}>
+                    </PrivateRoute>
+                    <PrivateRoute path={`${path}/pay`}>
                         <Payment></Payment>
-                    </Route>
-                    <Route path={`${path}/myOrders`}>
+                    </PrivateRoute>
+                    <PrivateRoute path={`${path}/myOrders`}>
                         <MyOrders></MyOrders>
-                    </Route>
+                    </PrivateRoute>
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>

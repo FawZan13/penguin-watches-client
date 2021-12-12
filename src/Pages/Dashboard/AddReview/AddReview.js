@@ -24,6 +24,9 @@ const AddReview = () => {
                 <input {...register("name", { required: true, maxLength: 20 })}
                     style={{ width: '75%', margin: "5px", padding: "10px" }} placeholder="Name" />
                 <textarea {...register("review")} style={{ width: '75%', margin: "5px", padding: "10px" }} placeholder="Your Review" />
+                <input type="number" {...register("number", { required: true })}
+                    style={{ width: '75%', margin: "5px", padding: "10px" }} min="1" max="5" placeholder="Rating" />
+                {/* <input type="number" id="quantity" name="quantity" min="1" max="5"></input> */}
                 <Button sx={{ width: '40%', m: 2, mt: 4, mb: 5 }} variant="contained" type="submit">Add Review</Button>
             </form>
         </div>
