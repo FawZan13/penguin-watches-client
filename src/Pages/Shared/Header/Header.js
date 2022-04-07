@@ -13,7 +13,7 @@ const Header = () => {
     const { user, logout } = useAuth();
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar color="secondary" position="static">
+            <AppBar color="info" position="static">
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -25,7 +25,7 @@ const Header = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Penguin Watches
+                        Penguin Watch
                     </Typography>
                     <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home"><Button color="inherit">Home</Button></NavLink>
                     <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/explore"><Button color="inherit">Explore</Button></NavLink>

@@ -7,7 +7,7 @@ import Reviews from '../Reviews/Reviews';
 
 const Home = () => {
     return (
-        <Box color="secondary" style={{ backgroundColor: 'black', }}>
+        <Box>
             <Banner></Banner>
             <Products></Products>
             <Reviews></Reviews>

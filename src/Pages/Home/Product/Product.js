@@ -12,18 +12,18 @@ const Product = ({ product }) => {
     const { _id, name, price, description, img } = product;
     return (
         <Grid item xs={4} sm={4} md={4}>
-            <Card sx={{ maxWidth: 345, my: 3, p: 3 }}>
+            <Card sx={{ maxWidth: 345, my: 3, p: 3, boxShadow: 4 }}>
                 <CardMedia
                     component="img"
                     alt="watch"
-                    style={{ width: '100%', height: '250px', margin: '0 auto' }}
+                    style={{ width: '100%', height: '200px', margin: '0 auto' }}
                     image={img}
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                <CardContent style={{ height: '120px' }}>
+                    <Typography sx={{ textAlign: 'center' }} gutterBottom variant="h5" component="div">
                         {name}
                     </Typography>
-                    <Typography gutterBottom variant="h6" component="div">
+                    <Typography sx={{ textAlign: 'center' }} gutterBottom variant="h6" component="div">
                         Price: ${price}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -32,7 +32,7 @@ const Product = ({ product }) => {
                 </CardContent>
                 <CardActions>
                     <Link style={{ margin: 'auto', textDecoration: 'none' }} to={`/purchase/${_id}`}>
-                        <Button color="secondary" variant="outlined" >Purchase</Button>
+                        <Button color="info" variant="outlined" >Purchase</Button>
                     </Link>
 
                 </CardActions>

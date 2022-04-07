@@ -1,7 +1,7 @@
 import './App.css';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
@@ -12,7 +12,6 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/NotFound/NotFound';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
-import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Purchase from './Pages/Purchase/Purchase/Purchase';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import AddReview from './Pages/Dashboard/AddReview/AddReview';
@@ -22,6 +21,8 @@ import ManageOrders from './Pages/Dashboard/ManageOrders/ManageOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
 
 
 function App() {
@@ -30,54 +31,53 @@ function App() {
     <AuthProvider>
       <Router>
         <Header></Header>
-        <Switch>
-          <Route exact path="/home">
-            <Home></Home>
+        <Routes>
+          <Route path="/home" element={<Home />}>
+
           </Route>
-          <Route exact path="/login">
-            <Login></Login>
+          <Route path="/login" element={<Login />}>
+
           </Route>
-          <Route exact path="/register">
-            <Register></Register>
+          <Route path="/register" element={<Register />}>
+
           </Route>
-          <Route exact path="/">
-            <Home></Home>
+          <Route exact path="/" element={<Home />}>
           </Route>
-          <Route exact path="/explore">
-            <Explore></Explore>
+          <Route path="/explore" element={<Explore />}>
+
           </Route>
-          <PrivateRoute exact path="/purchase/:_id">
-            <Purchase></Purchase>
-          </PrivateRoute>
-          <PrivateRoute path="/dashboard/manageOrders">
-            <ManageOrders></ManageOrders>
-          </PrivateRoute>
-          <PrivateRoute path="/dashboard/manageProducts">
-            <ManageProducts></ManageProducts>
-          </PrivateRoute>
-          <PrivateRoute path="/dashboard/makeAdmin">
-            <MakeAdmin></MakeAdmin>
-          </PrivateRoute>
-          <PrivateRoute path="/dashboard/addProduct">
-            <AddProduct></AddProduct>
-          </PrivateRoute>
-          <PrivateRoute path="/dashboard/addReview">
-            <AddReview></AddReview>
-          </PrivateRoute>
-          <PrivateRoute path="/dashboard/pay">
-            <Payment></Payment>
-          </PrivateRoute>
-          <Route path="/dashboard/myOrders">
-            <MyOrders></MyOrders>
+          <Route exact path="/purchase/:_id" element={<PrivateRoute><Purchase /></PrivateRoute>}>
+
           </Route>
-          <PrivateRoute path="/dashboard">
-            <Dashboard></Dashboard>
-          </PrivateRoute>
-          <Route path="*">
-            <NotFound></NotFound>
+          <Route path="/dashboard/manageOrders" element={<AdminRoute><ManageOrders /></AdminRoute>}>
+
+          </Route>
+          <Route path="/dashboard/manageProducts" element={<AdminRoute><ManageProducts /></AdminRoute>}>
+
+          </Route>
+          <Route path="/dashboard/makeAdmin" element={<AdminRoute><MakeAdmin /></AdminRoute>}>
+
+          </Route>
+          <Route path="/dashboard/addProduct" element={<AdminRoute><AddProduct /></AdminRoute>}>
+
+          </Route>
+          <Route path="/dashboard/addReview" element={<PrivateRoute><AddReview /></PrivateRoute>}>
+
+          </Route>
+          <Route path="/dashboard/pay" element={<PrivateRoute><Payment /></PrivateRoute>}>
+
+          </Route>
+          <Route path="/dashboard/myOrders" element={<PrivateRoute><MyOrders /></PrivateRoute>}>
+
+          </Route>
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
+
+          </Route>
+          <Route path="*" element={<NotFound />}>
+
           </Route>
 
-        </Switch>
+        </Routes>
         <Footer></Footer>
       </Router>
     </AuthProvider>

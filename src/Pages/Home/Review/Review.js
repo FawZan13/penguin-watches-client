@@ -8,7 +8,7 @@ const Review = (props) => {
     const { name, review, number } = props.review;
     return (
         <Grid item xs={4} sm={4} md={4} style={{ marginBottom: '40px' }}>
-            <Card sx={{ minWidth: 275, border: 2, boxShadow: 0 }}>
+            <Card sx={{ minWidth: 275, border: 1, boxShadow: 0 }}>
                 <CardContent>
                     <Typography variant="body2">
 
