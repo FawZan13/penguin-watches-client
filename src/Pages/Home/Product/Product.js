@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const Product = ({ product }) => {
     const { _id, name, price, description, img } = product;
     return (
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={4} sm={4} md={4} data-aos="zoom-in">
             <Card sx={{ maxWidth: 345, my: 3, p: 3, boxShadow: 4 }}>
                 <CardMedia
                     component="img"

@@ -7,9 +7,9 @@ import { Grid, Rating } from '@mui/material';
 const Review = (props) => {
     const { name, review, number } = props.review;
     return (
-        <Grid item xs={4} sm={4} md={4} style={{ marginBottom: '40px' }}>
+        <Grid item xs={4} sm={4} md={4} style={{ marginBottom: '40px' }} data-aos="zoom-in">
             <Card sx={{ minWidth: 275, border: 1, boxShadow: 0 }}>
-                <CardContent>
+                <CardContent style={{ textAlign: 'center' }}>
                     <Typography variant="body2">
 
                         {review}
