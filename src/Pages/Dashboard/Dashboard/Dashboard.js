@@ -6,12 +6,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -38,24 +34,28 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <Box className="d-flex flex-direction-row">
-                <NavLink to="/home"><Button color="inherit">Home</Button></NavLink>
-                <NavLink to="/dashboard"><Button color="inherit">Dashboard</Button></NavLink>
+            <Box className="">
+                <NavLink style={{ textDecoration: 'none' }} to="/home">
+                    <ListItem button>
+
+                        <ListItemText primary="Home" />
+                    </ListItem>
+                </NavLink>
             </Box>
             {!admin ? <Box>
-                <NavLink to={`/dashboard/myOrders`}>
+                <NavLink style={{ textDecoration: 'none' }} to={`/dashboard/myOrders`}>
                     <ListItem button>
 
                         <ListItemText primary="My Orders" />
                     </ListItem>
                 </NavLink>
-                <NavLink to={`/dashboard/addReview`}>
+                <NavLink style={{ textDecoration: 'none' }} to={`/dashboard/addReview`}>
                     <ListItem button>
 
                         <ListItemText primary="Add Review" />
                     </ListItem>
                 </NavLink>
-                <NavLink to={`/dashboard/pay`}>
+                <NavLink style={{ textDecoration: 'none' }} to={`/dashboard/pay`}>
                     <ListItem button>
 
                         <ListItemText primary="Payment" />
@@ -63,19 +63,19 @@ function Dashboard(props) {
                 </NavLink>
             </Box> :
                 <Box>
-                    <NavLink to={`/dashboard/manageProducts`}>
+                    <NavLink style={{ textDecoration: 'none' }} to={`/dashboard/manageProducts`}>
                         <ListItem button>
 
                             <ListItemText primary="Manage Products" />
                         </ListItem>
                     </NavLink>
-                    <NavLink to={`/dashboard/makeAdmin`}>
+                    <NavLink style={{ textDecoration: 'none' }} to={`/dashboard/makeAdmin`}>
                         <ListItem button>
 
                             <ListItemText primary="Make Admin" />
                         </ListItem>
                     </NavLink>
-                    <NavLink to={`/dashboard/addProduct`}>
+                    <NavLink style={{ textDecoration: 'none' }} to={`/dashboard/addProduct`}>
                         <ListItem button>
 
                             <ListItemText primary="Add Product" />
@@ -109,7 +109,7 @@ function Dashboard(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        <Link to="/">Home</Link>
+                        Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -154,44 +154,6 @@ function Dashboard(props) {
 
             </Box>
         </Box>
-        // <div>
-        //     <Box sx={{ flexGrow: 1 }}>
-        //         <AppBar color="secondary" position="static">
-        //             <Toolbar>
-        //                 <IconButton
-        //                     size="large"
-        //                     edge="start"
-        //                     color="inherit"
-        //                     aria-label="menu"
-        //                     sx={{ mr: 2 }}
-        //                 >
-        //                     <MenuIcon />
-        //                 </IconButton>
-        //                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-        //                     Dashboard
-        //                 </Typography>
-        //                 <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home"><Button color="inherit">Home</Button></NavLink>
-        //                 {
-        //                     admin ?
-        //                         <Box>
-        //                             <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard/makeAdmin"><Button color="inherit">Make Admin</Button></NavLink>
-        //                             <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard/addProduct"><Button color="inherit">Add Product</Button></NavLink>
-        //                             <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard/manageOrders"><Button color="inherit">Manage  Orders</Button></NavLink>
-        //                             <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard/manageProducts"><Button color="inherit">Manage  Products</Button></NavLink>
-        //                         </Box>
-        //                         :
-        //                         <Box>
-        //                             <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard/pay"><Button color="inherit">Pay</Button></NavLink>
-        //                             <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard/addReview"><Button color="inherit">Add Review</Button></NavLink>
-        //                             <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard/myOrders"><Button color="inherit">My Orders</Button></NavLink>
-        //                         </Box>
-
-        //                 }
-        //             </Toolbar>
-        //         </AppBar>
-        //     </Box>
-
-        // </div>
     );
 };
 

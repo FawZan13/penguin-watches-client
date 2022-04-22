@@ -49,29 +49,29 @@ function App() {
           <Route exact path="/purchase/:_id" element={<PrivateRoute><Purchase /></PrivateRoute>}>
 
           </Route>
-          <Route path="/dashboard/manageOrders" element={<AdminRoute><ManageOrders /></AdminRoute>}>
 
-          </Route>
-          <Route path="/dashboard/manageProducts" element={<AdminRoute><ManageProducts /></AdminRoute>}>
-
-          </Route>
-          <Route path="/dashboard/makeAdmin" element={<AdminRoute><MakeAdmin /></AdminRoute>}>
-
-          </Route>
-          <Route path="/dashboard/addProduct" element={<AdminRoute><AddProduct /></AdminRoute>}>
-
-          </Route>
-          <Route path="/dashboard/addReview" element={<PrivateRoute><AddReview /></PrivateRoute>}>
-
-          </Route>
-          <Route path="/dashboard/pay" element={<PrivateRoute><Payment /></PrivateRoute>}>
-
-          </Route>
-          <Route path="/dashboard/myOrders" element={<PrivateRoute><MyOrders /></PrivateRoute>}>
-
-          </Route>
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
+            <Route path="/dashboard/manageOrders" element={<AdminRoute><ManageOrders /></AdminRoute>}>
 
+            </Route>
+            <Route path="/dashboard/manageProducts" element={<AdminRoute><ManageProducts /></AdminRoute>}>
+
+            </Route>
+            <Route path="/dashboard/makeAdmin" element={<AdminRoute><MakeAdmin /></AdminRoute>}>
+
+            </Route>
+            <Route path="/dashboard/addProduct" element={<AdminRoute><AddProduct /></AdminRoute>}>
+
+            </Route>
+            <Route path="/dashboard/addReview" element={<PrivateRoute><AddReview /></PrivateRoute>}>
+
+            </Route>
+            <Route path="/dashboard/pay" element={<PrivateRoute><Payment /></PrivateRoute>}>
+
+            </Route>
+            <Route path="/dashboard/myOrders" element={<PrivateRoute><MyOrders /></PrivateRoute>}>
+
+            </Route>
           </Route>
           <Route path="*" element={<NotFound />}>
 

@@ -18,7 +18,7 @@ const AddReview = () => {
             })
     }
     return (
-        <div>
+        <div style={{ textAlign: 'center' }}>
             <h2>Add Review</h2>
             <form style={{ margin: "20px" }} onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name", { required: true, maxLength: 20 })}

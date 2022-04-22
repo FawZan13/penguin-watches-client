@@ -41,12 +41,13 @@ const Purchase = () => {
     return (
         <Container>
             <Typography variant="body1" gutterBottom>
-                {userName}
-                {email}
+                <h4>Purchase By</h4>
+                <h3>Name: {userName}</h3>
+                <h3>Email: {email}</h3>
             </Typography>
             <Grid container spacing={2}>
                 <Grid sx={{ mt: 10 }} item xs={12} md={6}>
-                    <Typography variant="body1" gutterBottom>
+                    <Typography variant="h5" gutterBottom >
                         Purchase
                     </Typography>
                     <form style={{ margin: "20px" }} onSubmit={handleSubmit(onSubmit)}>
@@ -78,7 +79,7 @@ const Purchase = () => {
                     </Card>
                 </Grid>
             </Grid>
-        </Container>
+        </Container >
     );
 };
 
