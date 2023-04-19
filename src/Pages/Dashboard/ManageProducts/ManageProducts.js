@@ -6,13 +6,13 @@ const ManageProducts = () => {
     const [products, setProducts] = useState([])
     const [control, setControl] = useState(false);
     useEffect(() => {
-        fetch('https://penguin-watches-server.vercel.app/products')
+        fetch('https://penguin-watches-server-g6go.vercel.app/products')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [control])
     const handleDelete = (id) => {
         alert('Do you want to delete this item?');
-        fetch(`https://penguin-watches-server.vercel.app/deleteProduct/${id}`, {
+        fetch(`https://penguin-watches-server-g6go.vercel.app/deleteProduct/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

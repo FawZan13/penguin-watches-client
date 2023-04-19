@@ -66,7 +66,7 @@ const useFirebase = () => {
     }, [])
 
     useEffect(() => {
-        fetch(`https://penguin-watches-server.vercel.app/users/${user.email}`)
+        fetch(`https://penguin-watches-server-g6go.vercel.app/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -83,7 +83,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://penguin-watches-server.vercel.app/users', {
+        fetch('https://penguin-watches-server-g6go.vercel.app/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

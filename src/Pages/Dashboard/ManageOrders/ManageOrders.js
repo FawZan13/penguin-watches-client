@@ -6,7 +6,7 @@ const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`https://penguin-watches-server.vercel.app/allOrders`)
+        fetch(`https://penguin-watches-server-g6go.vercel.app/allOrders`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, []);

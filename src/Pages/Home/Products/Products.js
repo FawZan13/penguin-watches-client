@@ -6,7 +6,7 @@ import Product from '../Product/Product';
 const Products = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('https://penguin-watches-server.vercel.app/products')
+        fetch('https://penguin-watches-server-g6go.vercel.app/products')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])

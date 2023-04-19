@@ -7,7 +7,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        axios.post('https://penguin-watches-server.vercel.app/products', data)
+        axios.post('https://penguin-watches-server-g6go.vercel.app/products', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {

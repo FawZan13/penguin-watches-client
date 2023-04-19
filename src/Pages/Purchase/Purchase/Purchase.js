@@ -15,7 +15,7 @@ const Purchase = () => {
 
 
     useEffect(() => {
-        fetch(`https://fair-pink-chicken-suit.cyclic.app/products/${_id}`)
+        fetch(`https://penguin-watches-server-g6go.vercel.app/products/${_id}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [])
@@ -28,7 +28,7 @@ const Purchase = () => {
         data.img = product.img;
         data.description = product.description;
         console.log(data);
-        fetch("https://fair-pink-chicken-suit.cyclic.app/myOrders", {
+        fetch("https://penguin-watches-server-g6go.vercel.app/myOrders", {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data),
