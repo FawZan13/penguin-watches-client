@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://gentle-everglades-82582.herokuapp.com/users/admin', {
+        fetch('https://penguin-watches-server.vercel.app/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

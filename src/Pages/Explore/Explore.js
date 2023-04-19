@@ -6,7 +6,7 @@ import Product from '../Home/Product/Product';
 const Explore = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('https://gentle-everglades-82582.herokuapp.com/products')
+        fetch('https://penguin-watches-server.vercel.app/products')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])

@@ -15,7 +15,7 @@ const Purchase = () => {
 
 
     useEffect(() => {
-        fetch(`https://gentle-everglades-82582.herokuapp.com/products/${_id}`)
+        fetch(`https://fair-pink-chicken-suit.cyclic.app/products/${_id}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [])
@@ -28,7 +28,7 @@ const Purchase = () => {
         data.img = product.img;
         data.description = product.description;
         console.log(data);
-        fetch("https://gentle-everglades-82582.herokuapp.com/myOrders", {
+        fetch("https://fair-pink-chicken-suit.cyclic.app/myOrders", {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data),

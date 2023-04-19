@@ -16,7 +16,6 @@ const Banner = () => {
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                             standard dummy text ever since the 1500s, when an unknown printer took
                         </Typography>
-                        {/* <Button variant="contained" style={{ backgroundColor: '' }}>Browse Course</Button> */}
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6} data-aos="fade-left">

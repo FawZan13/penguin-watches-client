@@ -7,7 +7,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        axios.post('https://gentle-everglades-82582.herokuapp.com/products', data)
+        axios.post('https://penguin-watches-server.vercel.app/products', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {

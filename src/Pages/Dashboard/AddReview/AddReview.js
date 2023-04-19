@@ -8,7 +8,7 @@ const AddReview = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        axios.post('https://gentle-everglades-82582.herokuapp.com/reviews', data)
+        axios.post('https://penguin-watches-server.vercel.app/reviews', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {

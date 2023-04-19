@@ -10,13 +10,13 @@ const MyOrders = () => {
 
     const email = user.email;
     useEffect(() => {
-        fetch(`https://gentle-everglades-82582.herokuapp.com/myOrders/${email}`)
+        fetch(`https://penguin-watches-server.vercel.app/myOrders/${email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [control]);
     const handleDelete = (id) => {
         alert('Do you want to delete this item?');
-        fetch(`https://gentle-everglades-82582.herokuapp.com/deleteOrder/${id}`, {
+        fetch(`https://penguin-watches-server.vercel.app/deleteOrder/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
